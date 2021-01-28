@@ -1,0 +1,7 @@
+﻿[*.cs]
+
+# IDE0047: Remove unnecessary parentheses
+dotnet_diagnostic.IDE0047.severity = none
+
+# CS1633: Unrecognized #pragma directive
+dotnet_diagnostic.CS1633.severity = none
