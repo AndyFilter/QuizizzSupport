@@ -1,5 +1,4 @@
 # QuizizzSupport
- Assists you during your quizizz exams
 [![GitHub top language](https://img.shields.io/github/languages/top/AndyFilter/QuizizzSupport)](https://en.wikipedia.org/wiki/C_Sharp_(programming_language))  [![Windows](https://img.shields.io/badge/platform-Windows-0078d7.svg?)](https://en.wikipedia.org/wiki/Microsoft_Windows) ![GitHub all releases](https://img.shields.io/github/downloads/AndyFilter/QuizizzSupport/total)
 
 # Support for you!
