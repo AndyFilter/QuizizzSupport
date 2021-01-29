@@ -8,15 +8,15 @@
         Title="Quizizz Support" Height="572" Width="800" WindowStyle="ThreeDBorderWindow">
     <Grid>
         <TextBox x:Name="textBox" Margin="20,30,20,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="33" Opacity="0.9" FontSize="20"/>
-        <Label x:Name="Debug" HorizontalAlignment="Center" VerticalAlignment="Top" Height="39" Width="760" Margin="0,182,0,0" Visibility="Collapsed">
+        <Label x:Name="Debug" HorizontalAlignment="Center" VerticalAlignment="Top" Height="77" Width="760" Margin="0,182,0,0" Visibility="Collapsed" ScrollViewer.CanContentScroll="True" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" Grid.RowSpan="5">
             <Label x:Name="label" Content="Label"/>
         </Label>
         <Button x:Name="button" Content="Get Answers" HorizontalAlignment="Left" Margin="20,79,0,0" VerticalAlignment="Top" Width="115" Click="SerialClicked"/>
-        <ScrollViewer Margin="0,116,0,63" VerticalScrollBarVisibility="Auto">
+        <ScrollViewer Margin="0,116,0,63" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
             <StackPanel x:Name="StackPanel" Margin="20,0,20,10" ScrollViewer.HorizontalScrollBarVisibility="Visible" CanHorizontallyScroll="True" ScrollViewer.CanContentScroll="True" CanVerticallyScroll="True"/>
         </ScrollViewer>
         <Button x:Name="button1" Content="Copy All" HorizontalAlignment="Left" Margin="20,0,0,27" Width="115" Click="CopyClicked" Height="20" VerticalAlignment="Bottom"/>
-        <Label x:Name="label1" Content="Quizizz Url:" HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1" Content="Quiz ID or Quizizz Url:" HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

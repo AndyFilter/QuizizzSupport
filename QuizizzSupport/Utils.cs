@@ -15,15 +15,16 @@ namespace QuizizzSupport
                 "totalQuestions": 1622
             },
         */
+
         public class QuizData
         {
             public Data data { get; set; }
             public bool success { get; set; }
         }
-
         public class Data
         {
             public Quiz quiz { get; set; }
+            public List<Questions> questions { get; set; }
         }
         public class Quiz
         {
@@ -61,6 +62,15 @@ namespace QuizizzSupport
         public class Answers
         {
             public string text { get; set; }
+        }
+
+        public class RoomData
+        {
+            public Room room { get; set; }
+        }
+        public class Room
+        {
+            public string hash { get; set; }
         }
 
         //Json Data comes with HTML tags ex.{ "text": "<p>Elton John sang Crocodile Rock.</p>" }. This function gets rid of them
