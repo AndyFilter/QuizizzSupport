@@ -1,5 +1,4 @@
 # QuizizzSupport
- Assists you during your quizizz exams
 [![GitHub top language](https://img.shields.io/github/languages/top/AndyFilter/QuizizzSupport)](https://en.wikipedia.org/wiki/C_Sharp_(programming_language))  [![Windows](https://img.shields.io/badge/platform-Windows-0078d7.svg?)](https://en.wikipedia.org/wiki/Microsoft_Windows) ![GitHub all releases](https://img.shields.io/github/downloads/AndyFilter/QuizizzSupport/total)
 
 # Support for you!
@@ -9,9 +8,9 @@ Have you ever felt like **you are too stupid**? Do you always feel like that? Pr
 
 # How to use
 
- - All you need to do is open the quiz, copy the link or ID (ex. *https://quizizz.com/join/quiz/5eb0822793a8c30021cb9b79/start*, *123456*, *https://quizizz.com/join?gc=745938*). And paste it into the ***Quiz ID or Quizizz Url*** box
+ - All you need to do is open the quiz, copy the link (ex. *https://quizizz.com/join/quiz/5eb0822793a8c30021cb9b79/start*). And paste it into the ***Quizziz Url*** box
  - Press ***Get Answers*** button
- - If there are no error, **answers should appear** in the panel below
+ - If there is no error, answers should appear in the panel below
 
 # Questions and Issues
 If you have any kind of question or issue to report. DM me through Discord: **IsPossible#8212**, or on **GitHub**
