@@ -145,13 +145,11 @@ namespace QuizizzSupport
                     case "MCQ":
                     default:
                         List<int> listansw = Regex.Matches(p.GetRawText(), "(-?[0-9]+)").OfType<Match>().Select(m => int.Parse(m.Value)).ToList();
-                        var strings =
-                        listansw.Select(i => i.ToString(CultureInfo.InvariantCulture)).Aggregate((s1, s2) => s1 + ", " + s2);
+                        var strings = listansw.Select(i => i.ToString(CultureInfo.InvariantCulture)).Aggregate((s1, s2) => s1 + ", " + s2);
                         if (listansw.Count <= 0)
                         {
                             answer += Utils.RemoveHtml(question.structure.options[0].text);
                         }
-                        answer += Utils.RemoveHtml(question.structure.options[0].text);
                         // listansw - List of Answers. Loops through all the correct answers and adds them to the string
                         foreach (int i in listansw)
                         {
