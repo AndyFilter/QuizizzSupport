@@ -15,7 +15,9 @@ Go to **[releases page](https://github.com/AndyFilter/QuizizzSupport/releases/la
 The difference between *ReleaseX.X.rar* and *QuizizzSupport.exe* is that to run the program you need **.NET 3.2**, the first (*ReleaseX.X.rar*) does not have that included (**you might** still **have it installed on your computer**), *QuizizzSupport.exe* (~150mb file) on the other hand has **everything included**. If you don't care, just download the *QuizizzSupport.exe*. It should work.
 # How to use
 
- - All you need to do is open the quiz, copy the link or ID (ex. *https://quizizz.com/join/quiz/69b0842093a8c21371cb2115/start*, *123456*, *https://quizizz.com/join?gc=123456*). And paste it into the ***Quiz ID or Quizizz Url*** box
+ - All you need to do is open the quiz, copy the link or **Code** (ex. *https://quizizz.com/join/quiz/69b0842093a8c21371cb2115/start*, *123456*, *https://quizizz.com/join?gc=123456*) 
+  ***NOT*** with links like (*https://quizizz.com/join/pre-game/running/U2FsdG2137Xx420uNXaZgs%269BzNQskie2115SE%252Bvms8TlYtp73Go8rI8ehrwDZg%253D%253D/start*. 
+  And paste it into the ***Quiz ID or Quizizz Url*** box
  - Press ***Get Answers*** button
  - If there are no error, **answers should appear** in the panel below
 
