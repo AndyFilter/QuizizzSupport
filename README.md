@@ -20,6 +20,7 @@ The difference between *ReleaseX.X.rar* and *QuizizzSupport.exe* is that to run 
   And paste it into the ***Quiz ID or Quizizz Url*** box
  - Press ***Get Answers*** button
  - If there are no error, **answers should appear** in the panel below
+ - Put your mouse over a question / answer with an image to **see the image**
 
 # Questions and Issues
 If you have any kind of question or issue to report. DM me through Discord: **IsPossible#8212**, or on **GitHub**
