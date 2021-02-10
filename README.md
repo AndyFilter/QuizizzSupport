@@ -1,7 +1,6 @@
 
 # QuizizzSupport
-[![GitHub top language](https://img.shields.io/github/languages/top/AndyFilter/QuizizzSupport)](https://en.wikipedia.org/wiki/C_Sharp_(programming_language))  [![Windows](https://img.shields.io/badge/platform-Windows-0078d7.svg?)](https://en.wikipedia.org/wiki/Microsoft_Windows) ![GitHub all releases](https://img.shields.io/github/downloads/AndyFilter/QuizizzSupport/total)
-
+[![GitHub top language](https://img.shields.io/github/languages/top/AndyFilter/QuizizzSupport)](https://en.wikipedia.org/wiki/C_Sharp_(programming_language))  [![Windows](https://img.shields.io/badge/platform-Windows-0078d7.svg?)](https://en.wikipedia.org/wiki/Microsoft_Windows) ![GitHub all releases](https://img.shields.io/github/downloads/AndyFilter/QuizizzSupport/total) [![Discord Server](https://img.shields.io/static/v1?style=default&label=&logo=discord&message=Discord%20Server&color=2c2f33)](https://discord.gg/68ttDh42Ee)  
 # Support for you!
 Have you ever felt like **you are too stupid**? Do you always feel like that? Probably yes, in that case you came to a **right place**. Quizizz Support lets you get even better score on your school quizzes, **without much effort**.
 
@@ -23,12 +22,12 @@ The difference between *ReleaseX.X.rar* and *QuizizzSupport.exe* is that to run 
  - Put your mouse over a question / answer with an image to **see the image**
 
 # Questions and Issues
-If you have any kind of question or issue to report. DM me through Discord: **IsPossible#8212**, or on **GitHub**
+If you have any kind of question or issue to report. Join the [discord server](https://discord.gg/68ttDh42Ee) and ask anything, or just on **GitHub**
 
 
 # Edits & Forks
-Feel free to fork the project and tweak, fix, add to the code. I tried to add as many **useful comments** to the code as it's possible, so code should be **easy to read** even tho it was **written in just a few hours**.
-I'll be fixing and adding to the code my self, when I'll see a need to.
+Feel free to fork the project and tweak, fix, add to the code. I tried to add as many **useful comments** to the code as it's possible, so code should be **easy to read** even though it was **written in just a few hours**.
+I'll be fixing and adding to the code myself, when I'll see a need to.
 
 # Support for me!
 Buy me a coffee if you think I earned it! **Any amount means a lot** for me, please **consider donating** if you can.
