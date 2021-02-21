@@ -7,11 +7,11 @@ Have you ever felt like **you are too stupid**? Do you always feel like that? Pr
 # How to install
 Go to **[releases page](https://github.com/AndyFilter/QuizizzSupport/releases/latest)**. Read the **guide there**, or:
 
- - For the _**ReleaseX.X.rar**_ - **Unzip**, Run the _*QuizizzSupport.exe*_,  if this doesn't work try downloading the *QuizizzSupport.exe* file and running it.
+ - For the _**QuizizzSupport.exe**_ - Run the _*QuizizzSupport.exe*_,  if this doesn't work try downloading the *QuizizzSupportFramework.exe* file and running it.
   
- - For the _**QuizizzSupport.exe**_ - Run the _*QuizizzSupport.exe*_.
+ - For the _**QuizizzSupportFramework.exe**_ - Run the _*QuizizzSupportFramework.exe*_.
 
-The difference between *ReleaseX.X.rar* and *QuizizzSupport.exe* is that to run the program you need **.NET 3.2**, the first (*ReleaseX.X.rar*) does not have that included (**you might** still **have it installed on your computer**), *QuizizzSupport.exe* (~150mb file) on the other hand has **everything included**. If you don't care, just download the *QuizizzSupport.exe*. It should work.
+The difference between *QuizizzSupportFramework.exe* and *QuizizzSupport.exe* is that to run the program you need **.NET 3.2**, the second (*QuizizzSupport.exe*) does not have that included (**you might** still **have it installed on your computer**, you probably do), *QuizizzSupportFramework.exe* (~150mb file) on the other hand has **everything included**. If you don't care, just download the *QuizizzSupportFramework.exe*. It should work.
 # How to use
 
  - All you need to do is open the quiz, copy the link or **Code** (ex. *https://quizizz.com/join/quiz/69b0842093a8c21371cb2115/start*, *123456*, *https://quizizz.com/join?gc=123456*) 
@@ -19,7 +19,7 @@ The difference between *ReleaseX.X.rar* and *QuizizzSupport.exe* is that to run 
   And paste it into the ***Quiz ID or Quizizz Url*** box
  - Press ***Get Answers*** button
  - If there are no error, **answers should appear** in the panel below
- - Put your mouse over a question / answer with an image to **see the image**
+ - Put your mouse over a question / answer with an image / math equation to **see the image**
 
 # Questions and Issues
 If you have any kind of question or issue to report. Join the [discord server](https://discord.gg/68ttDh42Ee) and ask anything, or just on **GitHub**
