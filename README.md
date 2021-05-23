@@ -22,12 +22,11 @@ The difference between *QuizizzSupportFramework.exe* and *QuizizzSupport.exe* is
  - Put your mouse over a question / answer with an image / math equation to **see the image**
 
 # Questions and Issues
-If you have any kind of question or issue to report. Join the [discord server](https://discord.gg/68ttDh42Ee) and ask anything, or just on **GitHub**
-
+If you have any kind of question or issue to report. Join the [discord server](https://discord.gg/68ttDh42Ee) and ask anything.
 
 # Edits & Forks
-Feel free to fork the project and tweak, fix, add to the code. I tried to add as many **useful comments** to the code as it's possible, so code should be **easy to read** even though it was **written in just a few hours**.
-I'll be fixing and adding to the code myself, when I'll see a need to.
+Feel free to fork the project and tweak, fix, add to the code. I tried to add as many **useful comments** to the code as it's possible, so code should be **not that hard to read** even though it was **written in a hurry**.
+I do not plan of further updates, but who knows, just **don't expect any updates from me**.
 
 # Support for me!
 Buy me a coffee if you think I earned it! **Any amount means a lot** for me, please **consider donating** if you can.
