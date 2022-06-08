@@ -7,16 +7,31 @@
     <ApplicationIcon>QuizizzSupportIco.ico</ApplicationIcon>
     <Platforms>AnyCPU;x64</Platforms>
     <StartupObject>QuizizzSupport.App</StartupObject>
-    <SignAssembly>false</SignAssembly>
+    <SignAssembly>False</SignAssembly>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <DebugType>embedded</DebugType>
     <DebugSymbols>true</DebugSymbols>
+    <Deterministic>False</Deterministic>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <Deterministic>False</Deterministic>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Deterministic>False</Deterministic>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Deterministic>False</Deterministic>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="Discord-Logo+Wordmark-Color.png" />
+    <None Remove="GoogleLogo.png" />
+    <None Remove="QuizizzSupportIco.ico" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,10 +42,12 @@
     <Resource Include="Discord-Logo+Wordmark-Color.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="GoogleLogo.png" />
+    <Resource Include="QuizizzSupportIco.ico" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="WpfMath" Version="0.9.0" />
+    <PackageReference Include="WpfMath" Version="0.11.0" />
   </ItemGroup>
-
+	
 </Project>

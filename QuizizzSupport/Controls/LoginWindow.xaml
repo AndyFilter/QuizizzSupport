@@ -1,0 +1,79 @@
+﻿<Window x:Class="QuizizzSupport.Controls.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QuizizzSupport.Controls"
+        mc:Ignorable="d" AllowsTransparency="True" ResizeMode="NoResize" WindowStyle="None" Width="418" Height="250" Icon="/QuizizzSupportIco.ico" WindowStartupLocation="CenterOwner">
+    <WindowChrome.WindowChrome>
+        <WindowChrome CornerRadius="15" ResizeBorderThickness="10,10,2,10" GlassFrameThickness="5" UseAeroCaptionButtons="False" CaptionHeight="0"/>
+    </WindowChrome.WindowChrome>
+    <Window.Resources>
+        <ResourceDictionary Source="/DarkMode.xaml"></ResourceDictionary>
+    </Window.Resources>
+    <Window.Background>
+        <SolidColorBrush Color="White" Opacity="0"/>
+    </Window.Background>
+    <Grid>
+        <Border Background="{StaticResource DefaultBackground}" Style="{StaticResource Window}">
+            <Grid VerticalAlignment="Stretch" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                <Border x:Name="TopTabBorder" VerticalAlignment="Top" Style="{StaticResource TopTab}">
+                    <Grid VerticalAlignment="Top" HorizontalAlignment="Stretch" MouseLeftButtonDown="MouseTabDrag" Margin="5,0,5,0">
+                        <Grid.Background>
+                            <SolidColorBrush Color="#00000000" Opacity="0"/>
+                        </Grid.Background>
+                        <StackPanel Orientation="Horizontal" Margin="10,0,0,0">
+                            <Label x:Name="loginStatus" Content="Not logged in" VerticalAlignment="Center" Background="#00000000" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="0,2,0,0">
+                                <Label.Foreground>
+                                    <SolidColorBrush Color="{DynamicResource ValidationErrorColor}"/>
+                                </Label.Foreground>
+                            </Label>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                            <Button Content="_" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource TopTabButton}" 
+                                    FontSize="15" FontFamily="Montserrat ExtraBold" Cursor="Hand" Height="Auto" Click="MinimalizeClicked" Margin="0,0,5,0"/>
+
+                            <Button Content="x" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource TopTabButton}" 
+                                    FontSize="15" FontFamily="Montserrat ExtraBold" Cursor="Hand" Height="Auto" Click="ExitClicked"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+                <Grid Margin="9,50,9,9">
+                    <StackPanel Margin="15,0,15,0">
+                        <Label Content="Log into Quizizz" HorizontalContentAlignment="Center" FontSize="18" FontWeight="Bold" Margin="0,0,0,5"/>
+
+                        <Label x:Name="label1" Content="Quiz ID or Quizizz Url:" HorizontalAlignment="Left" Margin="20,0,0,0" VerticalAlignment="Top" Visibility="Collapsed"/>
+                        <Grid>
+                            <TextBox x:Name="userNameBox" TextWrapping="Wrap" VerticalAlignment="Top" Opacity="0.9" FontSize="16" Template="{StaticResource TextBoxBaseControlTemplate}" VerticalContentAlignment="Center" Margin="0,0,0,5" MaxLines="1" Height="32" ToolTip="Works only with Quizizz accounts, NOT Google accounts!"/>
+                            <Label IsHitTestVisible="False" Content="Username / email" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0" Foreground="DarkGray" Opacity="0.5">
+                                <Label.Style>
+                                    <Style TargetType="{x:Type Label}">
+                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                        <Setter Property="FontSize" Value="14"/>
+                                        <Setter Property="FontFamily" Value="Montserrat Medium"/>
+                                        <Setter Property="Foreground" Value="#e4ebea"/>
+                                        <Setter Property="Padding" Value="2"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Text, ElementName=userNameBox}" Value="">
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Label.Style>
+                            </Label>
+                        </Grid>
+                        <Label x:Name="label2" Content="Quiz ID or Quizizz Url:" HorizontalAlignment="Left" Margin="20,0,0,0" VerticalAlignment="Top" FontFamily="Montserrat SemiBold" Visibility="Collapsed"/>
+                        <PasswordBox x:Name="passwordBox" VerticalAlignment="Top" Opacity="0.9" FontSize="16" Template="{StaticResource PasswordBoxBaseControlTemplate}" VerticalContentAlignment="Center" Margin="0,0,0,5" Height="32" InputScope="Password"/>
+                        <CheckBox x:Name="rememberMeCheckbox" Content=" Remember Me" FontFamily="Montserrat Medium" Margin="0,0,0,5" ToolTip="This will simply store your username and password in a plain text!">
+                            <CheckBox.Foreground>
+                                <SolidColorBrush Color="{DynamicResource DefaultFontColor}"/>
+                            </CheckBox.Foreground>
+                        </CheckBox>
+                        <Button x:Name="loginButton" Content="Log in" Style="{DynamicResource Colorful}" Click="LoginClicked" Margin="0,0,0,7"/>
+                        <Label x:Name="loginFeedbackLab"/>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

@@ -2,8 +2,6 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:QuizizzSupport">
     <Color x:Key="ValidationErrorColor">#f44336</Color>
-    <SolidColorBrush x:Key="ValidationErrorBrush" Color="{StaticResource ValidationErrorColor}"/>
-    <SolidColorBrush x:Key="defaultForeground" Color="Brown"/>
     <Color x:Key="BackgroundColor">#FF252525</Color>
     <Color x:Key="LightBackgroundColor">#3B3B3B</Color>
     <Color x:Key="DefaultFontColor">#e4ebea</Color>
@@ -11,6 +9,11 @@
     <Color x:Key="GradientStopButtonColor">#FF5722</Color>
     <Color x:Key="HoverGradientStartButtonColor">#E040FB</Color>
     <Color x:Key="HoverGradientStopButtonColor">#FF7043</Color>
+    <Color x:Key="DiscordColor">#7289da</Color>
+
+
+    <SolidColorBrush x:Key="ValidationErrorBrush" Color="{StaticResource ValidationErrorColor}"/>
+    <SolidColorBrush x:Key="defaultForeground" Color="Brown"/>
     <SolidColorBrush x:Key="DefaultBackground" Color="{StaticResource BackgroundColor}"/>
     <SolidColorBrush x:Key="LightBackground" Color="{StaticResource LightBackgroundColor}"/>
     <SolidColorBrush x:Key="FontColor" Color="{StaticResource DefaultFontColor}"/>
@@ -22,6 +25,7 @@
     <SolidColorBrush x:Key="HoverButton" Color="#2499F7"/>
     <SolidColorBrush x:Key="GradientStartButton" Color="#E040FB"/>
     <SolidColorBrush x:Key="GradientStopButton" Color="#AD1457"/>
+    <SolidColorBrush x:Key="DiscordBrush" Color="{DynamicResource DiscordColor}"/>
 
     <Style TargetType="{x:Type Window}">
     </Style>
@@ -36,10 +40,11 @@
         <Setter Property="Background" Value="#4589FF" />
         <Setter Property="Padding" Value="12,8,12,8" />
         <Setter Property="FontFamily" Value="Montserrat Regular"/>
+        <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
-                    <Border Background="{TemplateBinding Background}" x:Name="BtnBorder"  Padding="12,8,12,8" CornerRadius="5">
+                    <Border Background="{TemplateBinding Background}" x:Name="BtnBorder"  Padding="{TemplateBinding Padding}" CornerRadius="5">
                         <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Border>
                 </ControlTemplate>
@@ -49,7 +54,7 @@
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="Background" Value="#80aeff"/>
                 <Setter Property="Foreground" Value="White" />
-                <Setter Property="Padding" Value="10,6,10,6" />
+                <Setter Property="Padding" Value="12,8,12,8" />
             </Trigger>
         </Style.Triggers>
     </Style>
@@ -104,7 +109,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
-                    <Border Background="{TemplateBinding Background}" Padding="8,4,8,4" CornerRadius="5" Margin="5,5,5,5">
+                    <Border Background="{TemplateBinding Background}" Padding="8,4,8,4" CornerRadius="5" Margin="0,5,0,5">
                         <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Border>
                 </ControlTemplate>
@@ -169,6 +174,32 @@
         </Border>
     </ControlTemplate>
 
+    <ControlTemplate x:Key="PasswordBoxBaseControlTemplate" TargetType="{x:Type PasswordBox}">
+        <Border Background="{TemplateBinding Background}" 
+                x:Name="Bd"
+                BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="5" Padding="4">
+            <ScrollViewer x:Name="PART_ContentHost" Padding="0" VerticalAlignment="Center" >
+            </ScrollViewer>
+        </Border>
+    </ControlTemplate>
+
+    <Style TargetType="{x:Type PasswordBox}">
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontFamily" Value="Montserrat Regular"/>
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Background" Value="{StaticResource LightBackground}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Border Background="{TemplateBinding Background}" CornerRadius="5">
+                        <ScrollViewer x:Name="PART_ContentHost" Padding="0">
+                        </ScrollViewer>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
     <Style TargetType="{x:Type TextBox}">
         <Setter Property="FontSize" Value="14"/>
         <Setter Property="FontFamily" Value="Montserrat Regular"/>
@@ -178,6 +209,8 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TextBox}">
                     <Border Background="{TemplateBinding Background}" CornerRadius="5">
+                        <ScrollViewer x:Name="PART_ContentHost" Padding="0">
+                        </ScrollViewer>
                     </Border>
                 </ControlTemplate>
             </Setter.Value>
@@ -270,6 +303,57 @@
                             <Setter Property="Width" Value="Auto" />
                             <Setter Property="Height" Value="8" />
                             <Setter TargetName="Thumb" Property="Tag" Value="Horizontal" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="{x:Type CheckBox}" TargetType="CheckBox">
+        <Setter Property="SnapsToDevicePixels" Value="true"/>
+        <Setter Property="OverridesDefaultStyle" Value="true"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="CheckBox">
+                    <BulletDecorator Background="Transparent">
+                        <BulletDecorator.Bullet>
+                            <Border x:Name="Border"  
+              Width="20" 
+              Height="20" 
+              CornerRadius="200" 
+              Background="{DynamicResource DefaultBackground}"
+              BorderThickness="2"
+              BorderBrush="{DynamicResource LightBackground}">
+                                <!--<Path
+                Width="9" Height="9" 
+                x:Name="CheckMark"
+                SnapsToDevicePixels="False" 
+                Stroke="{DynamicResource SecondaryLight}"
+                StrokeThickness="3"
+                Data="M 0 0 L 9 9 M 0 9 L 9 0" />-->
+                                <Path x:Name="CheckMark" Fill="{DynamicResource FontColor}" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                                    <Path.Data>
+                                        <EllipseGeometry Center="5,5" RadiusX="5" RadiusY="5" />
+                                    </Path.Data>
+                                </Path>
+                            </Border>
+                        </BulletDecorator.Bullet>
+                        <ContentPresenter Margin="0,0,0,0"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Left"
+            RecognizesAccessKey="True"/>
+                    </BulletDecorator>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="false">
+                            <Setter TargetName="CheckMark" Property="Visibility" Value="Collapsed"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="{x:Null}">
+                            <Setter TargetName="CheckMark" Property="Data" Value="M 0 7 L 7 0" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource LightBackground}" />
+                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource DefaultBackground}" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

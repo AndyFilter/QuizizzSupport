@@ -1,0 +1,68 @@
+﻿<Window x:Class="QuizizzSupport.Controls.ProfileScanControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:QuizizzSupport.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="500" AllowsTransparency="True" ResizeMode="NoResize" WindowStyle="None" Width="500" Height="450" Icon="/QuizizzSupportIco.ico" WindowStartupLocation="CenterOwner">
+    <WindowChrome.WindowChrome>
+        <WindowChrome CornerRadius="15" ResizeBorderThickness="10,10,2,10" GlassFrameThickness="5" UseAeroCaptionButtons="False" CaptionHeight="0"/>
+    </WindowChrome.WindowChrome>
+    <Window.Resources>
+        <ResourceDictionary Source="/DarkMode.xaml"></ResourceDictionary>
+    </Window.Resources>
+    <Window.Background>
+        <SolidColorBrush Color="White" Opacity="0"/>
+    </Window.Background>
+    <Grid>
+        <Border Background="{StaticResource DefaultBackground}" Style="{StaticResource Window}">
+            <Grid VerticalAlignment="Stretch" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                <Border x:Name="TopTabBorder" VerticalAlignment="Top" Style="{StaticResource TopTab}">
+                    <Grid VerticalAlignment="Top" HorizontalAlignment="Stretch" MouseLeftButtonDown="MouseTabDrag" Margin="5,0,5,0">
+                        <Grid.Background>
+                            <SolidColorBrush Color="#00000000" Opacity="0"/>
+                        </Grid.Background>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                            <Button Content="_" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource TopTabButton}" 
+                                    FontSize="15" FontFamily="Montserrat ExtraBold" Cursor="Hand" Height="Auto" Click="MinimalizeClicked" Margin="0,0,5,0"/>
+
+                            <Button Content="x" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource TopTabButton}" 
+                                    FontSize="15" FontFamily="Montserrat ExtraBold" Cursor="Hand" Height="Auto" Click="ExitClicked"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+                <Grid Margin="9,50,9,9">
+                    <StackPanel>
+                        <StackPanel>
+                            <Label Content="Log in with Quizizz:" Margin="0,0,0,5" FontSize="16"/>
+                            <Button Content="Log In" Style="{DynamicResource Normal}" Margin="0,0,0,5" Click="QuizizzLoginClicked"/>
+                        </StackPanel>
+                        <Grid Margin="0,5,0,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="0.3*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Separator/>
+                            <Label Content="OR" Grid.Column="1" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Center"/>
+                            <Separator Grid.Column="2"/>
+                        </Grid>
+                    <StackPanel>
+                        <TextBox x:Name="urlBox" Template="{StaticResource TextBoxBaseControlTemplate}" Text="http://Quizizz.com/smth" IsReadOnly="True"/>
+                        <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" Margin="2,5,0,5">
+                            <Button Style="{DynamicResource TopTabButton}" Content="Copy Url" Click="UrlCopyClicked"/>
+                            <Button Style="{DynamicResource Normal}" Content="Open Page" Margin="5,0,0,0" Click="PageOpenedClicked"/>
+                        </StackPanel>
+                        <Separator/>
+                        <TextBlock Text="Paste the contents of this page to the box below and press 'Continue'" Margin="5,2,0,0" FontSize="14" ToolTip="This is done for your safety!"/>
+                        <TextBlock Text="(You need to be logged into quizizz on the brower for this to work)" Margin="5,1,0,0" Foreground="#FFB8C3C1" ToolTip="Once you log-in press the Open Page button again"/>
+                        <TextBox x:Name="returnBox" Text="" Margin="0,5,0,9" Height="100" TextWrapping="Wrap"/>
+                        <Button Style="{DynamicResource Colorful}" Content="Continue" Click="ContinueClicked" />
+                    </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

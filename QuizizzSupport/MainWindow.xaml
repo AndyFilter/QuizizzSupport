@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QuizizzSupport"
         mc:Ignorable="d"
-        Title="Quizizz Support" Height="572" Width="800" WindowStyle="None" HorizontalContentAlignment="Left" ResizeMode="CanResize" AllowsTransparency="True" MinWidth="400" MinHeight="300">
+        Title="Quizizz Support" Height="572" Width="800" WindowStyle="None" HorizontalContentAlignment="Left" ResizeMode="CanResize" AllowsTransparency="True" MinWidth="500" MinHeight="300" Icon="/QuizizzSupportIco.ico">
     <WindowChrome.WindowChrome>
-        <WindowChrome CornerRadius="15" ResizeBorderThickness="10,10,2,10" GlassFrameThickness="5" UseAeroCaptionButtons="False" CaptionHeight="0"/>
+        <WindowChrome CornerRadius="15" ResizeBorderThickness="10,10,10,10" GlassFrameThickness="5" UseAeroCaptionButtons="False" CaptionHeight="0"/>
     </WindowChrome.WindowChrome>
     <Window.Resources>
         <ResourceDictionary Source="DarkMode.xaml"></ResourceDictionary>
@@ -26,18 +26,28 @@
                         <Label Content="Version:" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                         <Label x:Name="versionLabel" Content="0.0.0" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                        <Button Content="📌" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource TopTabButton}" FontSize="15" FontFamily="Montserrat SemiBold" Cursor="Hand" Height="Auto" Margin="0,0,20,0" Click="PinClicked"/>
-                        <Button Content="_" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource TopTabButton}" FontSize="15" FontFamily="Montserrat ExtraBold" Cursor="Hand" Height="Auto" Click="MinimalizeClicked"/>
-                        <Button Content="◻" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource TopTabButton}" FontSize="15" FontFamily="Montserrat ExtraBold" Cursor="Hand" Height="Auto" Click="MaximizeClicked"/>
-                        <Button Content="X" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource TopTabButton}" FontSize="15" FontFamily="Montserrat ExtraBold" Cursor="Hand" Height="Auto" Click="ExitClicked"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,5,0">
+                        <Label x:Name="loggedUserLabel" Content="Not Logged in" VerticalContentAlignment="Center" Margin="0,2,8,0">
+                            <Label.Foreground>
+                                <SolidColorBrush Color="{DynamicResource ValidationErrorColor}"/>
+                            </Label.Foreground>
+                        </Label>
+                        <Button x:Name="loginButton" Style="{DynamicResource Normal}" Content="Log In" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="6,3,6,3" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="0,0,7,0" Click="LogInClicked">
+                            <Button.Background>
+                                <SolidColorBrush Color="{DynamicResource DiscordColor}"/>
+                            </Button.Background>
+                        </Button>
+                        <Button Content="📌" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource TopTabButton}" FontSize="15" FontFamily="Montserrat SemiBold" Cursor="Hand" Height="Auto" Click="PinClicked" Margin="0,0,20,0"/>
+                        <Button Content="_" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource TopTabButton}" FontSize="15" FontFamily="Montserrat ExtraBold" Cursor="Hand" Height="Auto" Click="MinimalizeClicked" Margin="0,0,7,0"/>
+                        <Button Content="◻" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource TopTabButton}" FontSize="15" FontFamily="Montserrat ExtraBold" Cursor="Hand" Height="Auto" Click="MaximizeClicked" Visibility="Collapsed"/>
+                        <Button Content="x" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource TopTabButton}" FontSize="15" FontFamily="Montserrat ExtraBold" Cursor="Hand" Height="Auto" Click="ExitClicked"/>
                     </StackPanel>
                 </Grid>
             </Border>
             <StackPanel Margin="0,50,0,0" VerticalAlignment="Top">
                 <Label x:Name="label1" Content="Quiz ID or Quizizz Url:" HorizontalAlignment="Left" Margin="20,0,0,0" VerticalAlignment="Top" FontFamily="Montserrat SemiBold" Visibility="Collapsed"/>
                 <Grid>
-                    <TextBox x:Name="QuizIdBox" TextWrapping="Wrap" VerticalAlignment="Top" Opacity="0.9" FontSize="20" TextChanged="textBox_TextChanged" Template="{StaticResource TextBoxBaseControlTemplate}" VerticalContentAlignment="Center" Margin="20,0,20,0" KeyDown="EnterPressed" MaxLines="1"/>
+                    <TextBox x:Name="QuizIdBox" TextWrapping="Wrap" VerticalAlignment="Top" Opacity="0.9" FontSize="20" TextChanged="textBox_TextChanged" Template="{StaticResource TextBoxBaseControlTemplate}" VerticalContentAlignment="Center" Margin="20,0,20,0" KeyDown="EnterPressed" MaxLines="1000" Height="32"/>
                     <Label IsHitTestVisible="False" Content="Quiz ID or Quizizz Url" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="26,0,0,0" Foreground="DarkGray" Opacity="0.5">
                         <Label.Style>
                             <Style TargetType="{x:Type Label}">
@@ -86,11 +96,16 @@
                 <StackPanel x:Name="StackPanel" Margin="20,0,20,10" ScrollViewer.HorizontalScrollBarVisibility="Visible" CanHorizontallyScroll="True" ScrollViewer.CanContentScroll="True" CanVerticallyScroll="True"/>
             </ScrollViewer>
             <Grid VerticalAlignment="Bottom">
-                <Button x:Name="button1" Content="Copy All" HorizontalAlignment="Left" Margin="20,0,0,20" Click="CopyClicked" VerticalAlignment="Bottom" Style="{StaticResource Normal}"/>
+                <Button x:Name="button1" Content="Copy All" HorizontalAlignment="Left" Margin="20,0,0,20" Click="CopyClicked" VerticalAlignment="Bottom" Style="{StaticResource Normal}" ToolTip="Share the answers with all your classmates!" Padding="12,6,12,6">
+                    <Button.Background>
+                        <SolidColorBrush Color="{DynamicResource DiscordColor}"/>
+                    </Button.Background>
+                </Button>
                 <Image x:Name="DiscordLink" Source="Discord-Logo+Wordmark-Color.png" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="20,20,20,20" UseLayoutRounding="False" MaxWidth="100" Cursor="Hand" MouseDown="DiscordClicked" RenderOptions.BitmapScalingMode="HighQuality"/>
             </Grid>
-            <Button x:Name="button2" Content="Button" HorizontalAlignment="Left" Margin="169,79,0,0" VerticalAlignment="Top" Click="DebugButtonClicked" Visibility="Collapsed" Style="{StaticResource Normal}"/>
+            <Button x:Name="button2" Content="Button" HorizontalAlignment="Left" Margin="157,90,0,0" VerticalAlignment="Top" Click="DebugButtonClicked" Visibility="Collapsed" Style="{StaticResource Normal}"/>
             <Label x:Name="Debug" Tag="SUPER HIDDEN LABEL :Chad_Emoji:"  Margin="0,0,20,15" Visibility="Collapsed" HorizontalContentAlignment="Right" Content="Test" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+            <Label Content="EARLY ACCESS BUILD" Foreground="#4CE4EBEA" FontSize="32" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Collapsed"/>
         </Grid>
     </Border>
 </Window>
